@@ -1,7 +1,10 @@
 # Look and feel of the GUI
 
-import sys
+import shared.globals
 
+# import func.app
+
+import sys
 import tkinter as tk
 from tkinter import (ttk,)
 from tkinter import filedialog
@@ -10,8 +13,6 @@ import sv_ttk
 import darkdetect
 from base64 import b64decode
 
-import func.app
-
 # variables
 default_font = font.nametofont("TkDefaultFont")
 parse_font_dict = default_font.actual()
@@ -19,6 +20,7 @@ parse_font_dict = default_font.actual()
 with open("gui/icon_photo_b64", 'rb') as icon_photo_file:
     icon_photo_data = icon_photo_file.read()
     icon_photo = tk.PhotoImage(data=b64decode(icon_photo_data))
+    shared.globals.icon_photo = icon_photo
 
 # start up behaviour that relates to aesthetics and therefore, i feel, fits better here than in gui/startup.py
 
