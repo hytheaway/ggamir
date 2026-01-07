@@ -1,11 +1,14 @@
 # Alert windows, including error and message windows
 
+import shared.globals
+
 import gui.lookandfeel
 import gui.windowmanagement
 import gui.tooltips
 
-def errorWindow(
-    root,
+
+def error_window(
+    root = shared.globals.root,
     icon_photo = gui.lookandfeel.icon_photo,
     error_message: str = "Generic Error Message",
     title: str = "Error",
@@ -52,9 +55,9 @@ def errorWindow(
     gui.lookandfeel.apply_theme_to_titlebar(errorWindow)
     return -1
 
-def messageWindow(
-    root,
-    icon_photo,
+def message_window(
+    root = shared.globals.root,
+    icon_photo = gui.lookandfeel.icon_photo,
     message: str = "Generic Message",
     title: str = "Title",
     width: int = 300,
