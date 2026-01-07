@@ -1,5 +1,18 @@
 # Garrett's Great Analyzer of Mono IRs
 
+# Global variables to be shared across all files that need it.
+import shared.globals
+
+# Start up (must be before GUI imports)
+import gui.startup
+
+if __name__ == '__main__':
+    shared.globals.root = gui.startup.start_up()
+
+import gui.windowmanagement
+import gui.initcontent
+import func.app
+
 # OS
 import sys
 import os
@@ -9,24 +22,9 @@ import tempfile
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Start up (must come before GUI imports)
-import gui.startup
-
 if __name__ == '__main__':
-    root = gui.startup.startUp()
-
-# GUI
-import gui.lookandfeel
-import gui.windowmanagement
-import gui.content
-
-# Functions
-import func.app
-
-if __name__ == '__main__':
-    gui.windowmanagement.centered_window(root)
+    gui.windowmanagement.centered_window(shared.globals.root)
+    gui.initcontent.populate_root(shared.globals.root)
+    func.app.root_management(shared.globals.root)
     
-    gui.content.populateRoot(root)
-    
-    func.app.rootManagement(root)
-    root.mainloop()
+    shared.globals.root.mainloop()
