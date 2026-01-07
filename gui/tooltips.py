@@ -1,6 +1,6 @@
-import gui
-
 # Tooltips
+
+import tkinter as tk
 
 class ToolTip(
     object
@@ -18,10 +18,10 @@ class ToolTip(
         x, y, cx, cy = self.widget.bbox("insert")
         x = x + self.widget.winfo_rootx() + 57
         y = y + cy + self.widget.winfo_rooty() + 27
-        self.tipwindow = tw = gui.tk.Toplevel(self.widget)
+        self.tipwindow = tw = tk.Toplevel(self.widget)
         tw.wm_overrideredirect(1)
         tw.wm_geometry("+%d+%d" % (x, y))
-        tooltip_label = gui.tk.Label(
+        tooltip_label = tk.Label(
             tw,
             text=self.text,
             justify="left",
