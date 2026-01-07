@@ -1,4 +1,5 @@
-# Application start up
+# Application start up.
+# Make sure to avoid circular imports! They'll happen here.
 
 import os
 import tkinter as tk
@@ -8,7 +9,7 @@ os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = (
     "hide"  # <- gets rid of pygame welcome message, which clutters up cli
 )
 
-def startUp():
+def start_up():
     root = tk.Tk()
     root.minsize(600,400)
     root.grid_columnconfigure(0, weight=1)
