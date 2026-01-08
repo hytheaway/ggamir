@@ -5,6 +5,7 @@ import shared.globals
 import gui.tooltips
 import gui.soundio
 import gui.windowmanagement
+import func.stringops
 
 import tkinter as tk
 from tkinter import (ttk,)
@@ -31,6 +32,8 @@ def manipulate_tk_with_func(function, tkObject, tkAttribute, func_params=None, r
     
     match tkAttribute:
         case 'text':
+            if len(new_value) > 30:
+                new_value = func.stringops.shorten_file_name(new_value, 30)
             new_value += "\n"
             tkObject.config(text=new_value)
         case 'state':

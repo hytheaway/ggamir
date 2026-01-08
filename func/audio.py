@@ -11,7 +11,7 @@ import func.app
 import soundfile as sf
 
 def pick_ir(ir_label):
-    return_value = 2 # shortened file path
+    return_value = 1 # audio file basename
     tooltip_return_value = 0 # full file path
     
     try:

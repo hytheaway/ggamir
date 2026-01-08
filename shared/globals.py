@@ -10,6 +10,7 @@ parse_font_dict = None
 audio_file_path = None
 audio_file_path_print = None
 audio_file_path_short = None
+audio_file_basename = None
 
 IR = None
 fs = None

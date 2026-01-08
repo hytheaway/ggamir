@@ -24,7 +24,7 @@ def populate_root(root):
     select_impulse_response_button = ttk.Button(display_frame, text="Select IR (.wav)...", style="my.TButton", command=lambda:func.audio.pick_ir(selected_ir_label))
     select_impulse_response_button.grid(row=2, column=1)
     
-    selected_ir_label = tk.Label(display_frame, text='IR file:\n', justify='center', wraplength=120)
+    selected_ir_label = tk.Label(display_frame, text='IR file:\n', justify='center', wraplength=180)
     selected_ir_label.grid(row=3, column=1)
     
     button_frame = tk.Frame(root)
