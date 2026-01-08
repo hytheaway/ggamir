@@ -33,6 +33,8 @@ def time_domain_graph(file_path, IR):
     
     fig.tight_layout()
     
+    gui.windowmanagement.centered_window(graph_window)
+    
     return
 
 def freq_domain_graph(file_path, IR, fs):
@@ -61,6 +63,8 @@ def freq_domain_graph(file_path, IR, fs):
     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
     
     fig.tight_layout()
+    
+    gui.windowmanagement.centered_window(graph_window)
     
     return
 
