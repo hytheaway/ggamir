@@ -16,7 +16,7 @@ def centered_window(window,):  # https://www.geeksforgeeks.org/how-to-center-a-w
     y = (screen_height - height) // 2
     window.geometry(f"{width}x{height}+{x}+{y}")
 
-def create_new_window(root, window_title:str, width:int, height:int):
+def create_new_window(root, window_title:str, width:int=300, height:int=220):
     window = tk.Toplevel(root)
     gui.lookandfeel.apply_theme_to_titlebar(window)
     window.iconphoto(False, shared.globals.icon_photo)
