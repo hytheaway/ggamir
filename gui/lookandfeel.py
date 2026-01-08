@@ -17,6 +17,14 @@ from base64 import b64decode
 default_font = font.nametofont("TkDefaultFont")
 parse_font_dict = default_font.actual()
 
+shared.globals.default_font = default_font
+shared.globals.parse_font_dict = parse_font_dict
+
+if darkdetect.isDark():
+    shared.globals.light_or_dark_blue = "lightblue"
+else:
+    shared.globals.light_or_dark_blue = "darkblue"
+
 with open("gui/icon_photo_b64", 'rb') as icon_photo_file:
     icon_photo_data = icon_photo_file.read()
     icon_photo = tk.PhotoImage(data=b64decode(icon_photo_data))
