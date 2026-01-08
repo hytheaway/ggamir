@@ -4,10 +4,12 @@ import shared.globals
 
 import gui.tooltips
 import gui.soundio
+import gui.windowmanagement
 
 import tkinter as tk
 from tkinter import (ttk,)
 import os
+import webbrowser
 
 def manipulate_tk_with_func(function, tkObject, tkAttribute, func_params=None, return_value=None, tooltip_return_value=None):
     try:
@@ -78,3 +80,60 @@ def create_file_data_window(root, full_path):
     close_button.pack()
     
     shared.globals.file_data_window = file_data_window
+    
+    return
+
+def callback_url(url:str):
+    webbrowser.open_new(url)
+
+def create_contact_window():
+    contact_window = gui.windowmanagement.create_new_window(shared.globals.root, 'Contact')
+    contact_window.grid_columnconfigure(0, weight=1)
+    contact_window.grid_rowconfigure(0, weight=1)
+    contact_window.grid_rowconfigure(1, weight=1)
+    
+    gui.windowmanagement.centered_window(contact_window)
+    
+    title_frame = tk.Frame(contact_window)
+    title_frame.grid(row=0, column=0)
+    contact_title = tk.Label(
+        title_frame,
+        text="Contact/Feedback",
+        font=("TkDefaultFont", str(shared.globals.parse_font_dict["size"] + 2), "bold"),
+    )
+    contact_title.grid(row=0, column=0)
+    
+    links_frame = tk.Frame(contact_window)
+    links_frame.grid(row=1, column=0)
+    contact_url1 = tk.Label(
+        links_frame,
+        text="https://hytheaway.github.io/contact.html",
+        fg=shared.globals.light_or_dark_blue,
+        cursor="hand2",
+    )
+    contact_url1.grid(row=0, column=0)
+    contact_url1.bind(
+        "<Button-1>", lambda e: callback_url("https://hytheaway.github.io/contact.html")
+    )
+    contact_url2 = tk.Label(
+        links_frame,
+        text="https://github.com/hytheaway",
+        fg=shared.globals.light_or_dark_blue,
+        cursor="hand2",
+    )
+    contact_url2.grid(row=1, column=0)
+    contact_url2.bind(
+        "<Button-1>", lambda e: callback_url("https://github.com/hytheaway")
+    )
+    contact_url3 = tk.Label(
+        links_frame,
+        text="hytheaway@gmail.com",
+        fg=shared.globals.light_or_dark_blue,
+        cursor="hand2",
+    )
+    contact_url3.grid(row=2, column=0)
+    contact_url3.bind(
+        "<Button-1>", lambda e: callback_url("mailto:hytheaway@gmail.com")
+    )
+    
+    return
