@@ -1,2 +1,2 @@
 # ggamir
-Garrett's Great Analyzer of Mono Impulse Responses
+garrett's great analyzer of mono impulse responses
