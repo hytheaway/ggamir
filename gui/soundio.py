@@ -1,6 +1,5 @@
 # Audio input / output operations (mostly output)
 
-import soundfile as sf
 import pygame
 
 pygame.mixer.pre_init(channels=1, allowedchanges=pygame.AUDIO_ALLOW_CHANNELS_CHANGE)
