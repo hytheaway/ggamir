@@ -5,7 +5,6 @@ import shared.globals
 import gui.windowmanagement
 
 import tkinter as tk
-from tkinter import (ttk,)
 import matplotlib.pyplot as plt
 import numpy as np
 import os
