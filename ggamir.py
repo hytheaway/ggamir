@@ -13,15 +13,6 @@ import gui.windowmanagement
 import gui.initcontent
 import func.app
 
-# OS
-import sys
-import os
-import tempfile
-
-# Math
-import numpy as np
-import matplotlib.pyplot as plt
-
 if __name__ == '__main__':
     gui.windowmanagement.centered_window(shared.globals.root)
     gui.initcontent.populate_root(shared.globals.root)
