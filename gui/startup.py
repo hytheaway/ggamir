@@ -11,7 +11,7 @@ os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = (
 
 def start_up():
     root = tk.Tk()
-    root.minsize(600,400)
+    root.minsize(600,500)
     root.grid_columnconfigure(0, weight=1)
     root.grid_rowconfigure(0, weight=1)
     root.option_add('*tearOff', False)
