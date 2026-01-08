@@ -2,6 +2,10 @@
 
 root = None
 icon_photo = None
+light_or_dark_blue = 'lightblue'
+
+default_font = None
+parse_font_dict = None
 
 audio_file_path = None
 audio_file_path_print = None
