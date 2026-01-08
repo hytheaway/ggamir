@@ -18,6 +18,6 @@ installing ggamir is simple.
 2. change directory to the installed location
    * `cd path/to/directory/`
 3. install the required packages (**NOTE: it is *always* recommended to use a [virtual environment](https://rcpedia.stanford.edu/_user_guide/python_envs/) when installing python packages**)
-   * `pip install -r requirements.txt`
+   * `python3 -m pip install -r requirements.txt`
 4. once the requirements have been installed, you can run the python script.
    * `python3 ggamir.py`
