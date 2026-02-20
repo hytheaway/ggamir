@@ -21,6 +21,14 @@ def time_domain_graph(file_path, IR):
     ax.set_xlabel('Time (samples)')
     ax.set_ylabel('Amplitude')
     ax.set_title(f"IR: {os.path.basename(file_path)}")
+    if len(IR.shape) == 2:
+        channel_list = []
+        i = 0
+        while i <= IR.shape[1]:
+            channel = "Channel " + str(i+1)
+            channel_list.append(channel)
+            i += 1
+        ax.legend(channel_list)
     
     canvas = FigureCanvasTkAgg(fig, master=graph_window)
     canvas.draw()
@@ -53,7 +61,13 @@ def freq_domain_graph(file_path, IR, fs):
     ax.set_ylabel("Magnitude (dB)")
     ax.set_title(f"IR: {os.path.basename(file_path)}")
     if len(IR.shape) == 2:
-        ax.legend(["Channel 1", "Channel 2"])
+        channel_list = []
+        i = 0
+        while i <= IR.shape[1]:
+            channel = "Channel " + str(i+1)
+            channel_list.append(channel)
+            i += 1
+        ax.legend(channel_list)
     
     canvas = FigureCanvasTkAgg(fig, master=graph_window)
     canvas.draw()
