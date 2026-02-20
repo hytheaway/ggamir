@@ -52,6 +52,8 @@ def freq_domain_graph(file_path, IR, fs):
     ax.set_xlabel("Frequency (Hz)")
     ax.set_ylabel("Magnitude (dB)")
     ax.set_title(f"IR: {os.path.basename(file_path)}")
+    if len(IR.shape) == 2:
+        ax.legend(["Channel 1", "Channel 2"])
     
     canvas = FigureCanvasTkAgg(fig, master=graph_window)
     canvas.draw()
